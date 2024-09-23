@@ -1,25 +1,34 @@
 package main.java.model;
 
 import java.time.LocalDate;
-
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name ="producto")
 public class Producto {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id //PK
+	@Column(name="id_producto")
+	@GeneratedValue(strategy = GenerationType.AUTO) //Se genera automaticamente
 	private long id;
 
-	@Column
-	private String nombre;
+
+	
 	
 	@Column
+	@OneToMany(mappedBy = "producto")
+	private List<LineaPedido> lineas;
+	
+	private String nombre;
+	
 	private String descripcion;
 	
 	private LocalDate fechaAlta;

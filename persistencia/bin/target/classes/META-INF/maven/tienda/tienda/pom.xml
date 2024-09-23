@@ -21,7 +21,11 @@
 	    <version>5.10.2</version>
 	    <scope>test</scope>
 	</dependency>
-	
+	<dependency>
+		<groupId>es.estudiante</groupId>
+		<artifactId>CuentaBacariaEvaluable</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
